@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+import React, {Component,useState} from 'react';
+import Person from './Person.js';
+import './pooja.css'
+
+
+
+
+function App()
+{
+const[my_name,my_name_function]=useState("Python");
+
+const ChangeName= () =>
+  {
+   my_name_function("java");
+  }
+
+  return(
+  <div>
+
+    <h1 className="wisdom"> Welcome to react</h1>
+<Person name={my_name} clickable={ChangeName}> </Person>
+
+{/* <button onClick={ChangeName}>Change Name</button> */}
+  </div>
   );
-}
+  }
 
 export default App;
+
